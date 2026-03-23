@@ -31,7 +31,7 @@ PUBLIC
     $<BUILD_INTERFACE:${PROTOBUF_INCLUDE_DIR}>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
 )
-target_link_libraries(tensorboard_logger PUBLIC ${Protobuf_LIBRARIES})
+target_link_libraries(tensorboard_logger PUBLIC protobuf::libprotobuf)
 
 if (BUILD_TEST)
     add_executable(tensorboard_logger_test tests/test_tensorboard_logger.cc)
